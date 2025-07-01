@@ -53,7 +53,7 @@ class NumeroTelefonicoForm(ModelForm):
         model = NumeroTelefonico
         fields = ['telefono', 'tipo', 'estudiante']
 
-#agregar validacion para telefono (debe tener 10 dígitos) y tipo si es privado o publico (que no empiece con vocal)
+#trabajo en clase
     def clean_telefono(self):
         valor = self.cleaned_data['telefono']
         if len(valor) != 10 or not valor.isdigit():
