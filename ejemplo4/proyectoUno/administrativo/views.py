@@ -11,6 +11,8 @@ from administrativo.forms import *
 
 # Create your views here.
 
+
+
 def index(request):
     """
         Listar los registros del modelo Estudiante,
@@ -134,3 +136,8 @@ def crear_numero_telefonico_estudiante(request, id):
     diccionario = {'formulario': formulario, 'estudiante': estudiante}
 
     return render(request, 'crearNumeroTelefonicoEstudiante.html', diccionario)
+
+def listar_numeros(request):
+    numeros = NumeroTelefonico.objects.all()
+    informacion_template = {'numeros': numeros}
+    return render(request, 'listar_numeros.html', informacion_template)
